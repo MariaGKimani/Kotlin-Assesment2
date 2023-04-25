@@ -20,14 +20,27 @@ fun main() {
 //Write and invoke one function that takes in a random string and returns the
 //following values: first character, last character, length of the string and
 //whether it begins with a vowel or not. (6pts)
-fun random(str:String): Triple<Char.Companion, Char.Companion, Int.Companion> {
-    var firstChar = str.first()
-    var lastChar = str.last()
-    var length = str.length
-    return  Triple(Char,Char,Int)
+fun random(str:String):List<Any>{
 
+    var result = mutableListOf<Any>()
+
+    result.add(str[0])
+
+    var lastChar = str.length-1
+
+    result.add(str[lastChar])
+
+    result.add(str.length)
+
+    var vowels = arrayOf('a', 'e', 'i', 'o', 'u')
+    if (str[0] in vowels){
+        result.add("Starts with vowel")
+    }
+    else{
+        result.add("Does not start with vowel")
+    }
+    return result
 }
-
 
 
 
