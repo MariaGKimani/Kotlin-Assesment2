@@ -3,13 +3,15 @@ fun main() {
 
     password1("Mgmkim.05kim")
     password1("cat")
-//   multiples()
+   multiples()
 
    var  currentAccount = CurrentAccount(1111222200,"MariaKImni",200000.0)
         currentAccount.deposit(200000.0)
         currentAccount.withdraw(2000.0)
          currentAccount.details()
     println(currentAccount)
+    var savings = SavingsAccount(11112888,"Goreti",200000.0)
+   println( savings.withdrawals)
 }
 
 
