@@ -74,16 +74,11 @@ fun multiples() {
     for (x in 1..1000) {
         if (x % 6 == 0 && x % 8 == 0) {
             println("Bingo!")
-        } else if (x % 8== 0) {
-            println("mutiple of 8")
-        } else if (x % 6 == 0) {
-            println("multiple of 6")
         }
     }
-}
 
 
-//Create a class CurrentAccount with the following attributes: account number,
+    //Create a class CurrentAccount with the following attributes: account number,
 //account name, balance. It has the following functions:
 // deposit(amount: Double) - Increments the balance by the amount
 //deposited
@@ -91,20 +86,20 @@ fun multiples() {
 //withdrawn
 //details() - Prints out the account number and balance and name in
 //this format: “Account number x with balance y is operated by z”
-open  class CurrentAccount(val accountNumber: Int, val accountName: String, var balance: Double) {
+    open class CurrentAccount(val accountNumber: Int, val accountName: String, var balance: Double) {
 
-    fun deposit(cash: Double) {
-        balance += cash
-    }
+        fun deposit(cash: Double) {
+            balance += cash
+        }
 
-     open fun withdraw(cash: Double) {
-        balance -= cash
-    }
+        open fun withdraw(cash: Double) {
+            balance -= cash
+        }
 
-    fun details() {
-        println("AccountNumber  $accountNumber with balance $balance is operated by $accountName")
+        fun details() {
+            println("AccountNumber  $accountNumber with balance $balance is operated by $accountName")
+        }
     }
-}
 
 
 //Create another class SavingsAccount. It has the same functions and
@@ -116,14 +111,14 @@ open  class CurrentAccount(val accountNumber: Int, val accountName: String, var 
 //from the account. It also increments the withdrawals attribute after a
 //successful withdrawal (6pts)
 
-class SavingsAccount( accountNumber: Int, accountName: String, balance: Double) :CurrentAccount(accountNumber,accountName,balance){
-         var withdrawals = 0
+    class SavingsAccount(accountNumber: Int, accountName: String, balance: Double) : CurrentAccount(accountNumber, accountName, balance) {
+        var withdrawals = 0
 
-            override fun withdraw(money: Double) {
-                if (withdrawals > 4) {
-                    println("Go ahead")
-                }
-                super.withdraw(money)
-                withdrawals++
+        override fun withdraw(money: Double) {
+            if (withdrawals > 4) {
+                println("Go ahead")
             }
+            super.withdraw(money)
+            withdrawals++
         }
+    }
